@@ -1,0 +1,89 @@
+/* Styles de base */
+body {
+    font-family: 'Segoe UI', system-ui, sans-serif;
+    min-height: 100vh;
+}
+
+/* Animation pour les nouveaux scans */
+@keyframes pulse {
+    0% { opacity: 0.5; }
+    50% { opacity: 1; }
+    100% { opacity: 0.5; }
+}
+
+.scanning {
+    position: relative;
+}
+
+.scanning::after {
+    content: "";
+    position: absolute;
+    top: 25%;
+    left: 25%;
+    right: 25%;
+    height: 2px;
+    background: rgba(59, 130, 246, 0.8);
+    animation: pulse 1.5s infinite;
+    box-shadow: 0 0 10px rgba(59, 130, 246, 0.5);
+}
+
+/* Améliorations pour la caméra */
+#preview {
+    object-fit: cover;
+    background: #000;
+    position: relative;
+}
+
+/* Style des résultats */
+#result {
+    transition: all 0.3s ease;
+}
+
+#scanned-value {
+    word-break: break-all;
+}
+
+/* Boutons */
+button, a[href] {
+    cursor: pointer;
+    user-select: none;
+    transition: transform 0.1s, background-color 0.2s;
+}
+
+button:active, a[href]:active {
+    transform: scale(0.98);
+}
+
+/* Historique */
+#history-list {
+    max-height: calc(100vh - 100px);
+    overflow-y: auto;
+}
+
+/* Scrollbar personnalisée */
+::-webkit-scrollbar {
+    width: 8px;
+}
+
+::-webkit-scrollbar-track {
+    background: #1f2937;
+}
+
+::-webkit-scrollbar-thumb {
+    background: #3b82f6;
+    border-radius: 4px;
+}
+
+/* Media queries pour différents appareils */
+@media (max-width: 640px) {
+    #preview {
+        height: 250px;
+    }
+}
+
+@media (min-width: 768px) {
+    body {
+        max-width: 768px;
+        margin: 0 auto;
+    }
+}
