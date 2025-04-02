@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Historique</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body class="bg-gray-900 text-white">
+    <header class="p-4 flex justify-between items-center">
+        <h1 class="text-2xl font-bold">Historique</h1>
+        <button onclick="clearHistory()" class="px-4 py-2 bg-red-600 rounded hover:bg-red-700">Effacer Tout</button>
+    </header>
+    <div id="history-list" class="p-4 space-y-4">
+        <!-- Entries will be dynamically added here -->
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
